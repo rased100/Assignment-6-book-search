@@ -10,14 +10,12 @@ const searchBook = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => showSearchBooks(data.docs));
-    // .then(data => showResultsValue(data.docs));
+
 }
-// const showResultsValue = value => {
-//     console.log(value.length);
-// }
+
 
 const showSearchBooks = books => {
-    console.log(books.length);
+    // console.log(books.length);
     if (books.length === 0) {
         // No result found
         const totalSearchResult = document.getElementById('total-srarch-result');
@@ -47,10 +45,9 @@ const showSearchBooks = books => {
         div.classList.add('col');
         div.innerHTML = `
             <div class="card">
-                <div>
-                    <h5 class="card-title text-center">${book.title}</h5>
-                </div>
+            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top book-imag w-75 mx-auto" alt="...">
                 <div class="card-body">
+                    <h5 class="card-title">${book.title}</h5>
                     <p class="card-text"><span class="fw-bold">Author:</span> ${book.author_name}</p>
                     <p class="card-text"><span class="fw-bold">Publish-Year:</span> ${book.first_publish_year}</p>
                     <p class="card-text"><span class="fw-bold">Publisher:</span> ${book.publisher}</p>
