@@ -19,6 +19,7 @@ const showSearchBooks = books => {
     if (books.length === 0) {
         // No result found
         const totalSearchResult = document.getElementById('total-srarch-result');
+        totalSearchResult.textContent = '';
         const div1 = document.createElement('div');
         div1.innerHTML = `
             <h1 class="text-center">No Resut Found</h1>
@@ -28,6 +29,7 @@ const showSearchBooks = books => {
     else {
         // total results in number
         const totalSearchResult = document.getElementById('total-srarch-result');
+        totalSearchResult.textContent = '';
         const div1 = document.createElement('div');
         div1.innerHTML = `
     <p class="text-center  ">About <span class="fw-bold" >${books.length}</span> Search Results</p><hr class="w-50 mx-auto">
@@ -39,6 +41,7 @@ const showSearchBooks = books => {
 
     // book results
     const searchBookResult = document.getElementById('search-result');
+    searchBookResult.textContent = '';
     books.forEach(book => {
         console.log(book);
         const div = document.createElement('div');
